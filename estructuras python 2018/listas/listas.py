@@ -104,7 +104,25 @@ class LSE:
         true si el nuevo dato es insertado de forma satisfactoria en la listas
         false en caso contrario
         """
-        pass
+        if(pos>=0 and pos<=len(self)-1 and self.homogeneidad(nuevo_dato)):
+            nuevo_nodo = NodoLSE(nuevo_dato)
+            nodo_anterior = None
+            nodo_actual = self.cab
+            cr_pos = 0
+            while nodo_actual is not None and cr_pos != pos:  # seubicaenlap a elim
+                nodo_anterior = nodo_actual
+                nodo_actual = nodo_actual.sig
+                cr_pos += 1
+            if pos == 0:
+                nuevo_nodo.sig = nodo_actual
+                self.cab = nuevo_nodo
+
+            else:
+                nuevo_nodo.sig = nodo_actual
+                nodo_anterior.sig = nuevo_nodo
+            return True
+        else:
+            return False
 
     def encontrar(self, dato_a_buscar):
         """ def __eq__(self,otro_objeto)
@@ -124,7 +142,12 @@ class LSE:
         """
         return int
         """
-    pass
+        nodo_actual = self.cab
+        contador  = 0
+        while nodo_actual is not None:
+            contador+=1
+            nodo_actual = nodo_actual.sig
+        return contador
 
     def __str__(self):
         """
@@ -132,7 +155,14 @@ class LSE:
         return str metodo de presentacion
         print (lista_nuevos)
         """
-    pass
+        nodo_actual = self.cab
+        res = ""
+        while nodo_actual is not None:
+            res+="["+str(nodo_actual.dato)+"]->"
+            nodo_actual = nodo_actual.sig
+        res+="None"
+        return res
+
 
     """
     def __init__(self,separator = "\n")

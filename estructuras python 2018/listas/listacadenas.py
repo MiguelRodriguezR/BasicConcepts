@@ -20,5 +20,13 @@ lista_cas.agregar(4)
 lista_cas.agregar(5)
 lista_cas.agregar(5)
 lista_cas.remover(3,False)
+lista_cas.posicionar(8,10)
+lista_cas.posicionar(2,20)
+lista_cas.posicionar(7,30)
+lista_cas.posicionar(0,10)
+lista_cas.posicionar(0,"gato")
 lista_cas.recorrer()
+
+print("tamaño: "+str(len(lista_cas)))
+print(str(lista_cas))
 #
