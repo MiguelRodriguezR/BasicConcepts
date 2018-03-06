@@ -1,10 +1,11 @@
-from nodos.nodos import NodoLSE
+from nodos.nodosDE import NodoLDE
 
 
-class LSE:
+class LDE:
 
     def __init__(self):
         self.cab = None
+        self.pie = None
 
     def homogeneidad(self, dat):
         if(self.cab is None):
@@ -28,17 +29,19 @@ class LSE:
         sino)
         """
         if(self.homogeneidad(nuevo_dato)):
-            nuevo_nodo = NodoLSE(nuevo_dato)  # Crear nuevo nodo con la importacio
+            nuevo_nodo = NodoLDE(nuevo_dato)  # Crear nuevo nodo con la importacio
             if self.es_vacia():
                 self.cab = nuevo_nodo
+                self.pie = self.cab
             else:
                 nodo_actual = self.cab
                 while nodo_actual.sig is not None:
                     nodo_actual = nodo_actual.sig  # pregunta si tiene o no otro no
                 nodo_actual.sig = nuevo_nodo
+                self.pie = nodo_actual.sig
+                nuevo_nodo.ant = nodo_actual
             return True
-        else:
-            return False
+        return False
 
     def recorrer(self,atras=False):
         if atras is False:
@@ -52,7 +55,7 @@ class LSE:
                 print(nodo_actual.dato)
                 nodo_actual = nodo_actual.ant
 
-    def remover(self, item, por_pos=True):
+    def remover(self, item, por_pos=True,  all=False):
         """
         def remover (self, item, por_pos = True):remover tiene que devolver un
         valor boleano
@@ -70,8 +73,15 @@ class LSE:
                 cr_pos += 1
             if pos == 0:
                 self.cab = nodo_actual.sig
+                self.pie = nodo_actual.sig
+                if nodo_actual.sig is not None:
+                    self.cab.ant=None
             else:
                 nodo_anterior.sig = nodo_actual.sig
+                if nodo_actual.sig is not None:
+                    nodo_actual.sig.ant = nodo_anterior
+                else:
+                    self.pie = nodo_anterior
         else:
             nodo_anterior = None
             nodo_actual = self.cab
@@ -84,11 +94,19 @@ class LSE:
 
                     if (nodo_actual == self.cab):
                         self.cab = nodo_actual.sig
+                        self.cab.ant = None
                         nodo_actual = self.cab
 
                     else:
                         nodo_anterior.sig = nodo_actual.sig
+                        if nodo_actual.sig is not None:
+                            nodo_actual.sig.ant = nodo_anterior
+                        else:
+                            self.pie = nodo_anterior
                         nodo_actual = nodo_actual.sig
+                if(all == False):
+                    nodo_actual = None
+                    break
                     #print(nodo_actual)
                     #print(nodo_actual == None)
 
@@ -111,7 +129,7 @@ class LSE:
         false en caso contrario
         """
         if(pos>=0 and pos<=len(self)-1 and self.homogeneidad(nuevo_dato)):
-            nuevo_nodo = NodoLSE(nuevo_dato)
+            nuevo_nodo = NodoLDE(nuevo_dato)
             nodo_anterior = None
             nodo_actual = self.cab
             cr_pos = 0
@@ -122,9 +140,12 @@ class LSE:
             if pos == 0:
                 nuevo_nodo.sig = nodo_actual
                 self.cab = nuevo_nodo
+                nodo_actual.ant=nuevo_nodo
 
             else:
                 nuevo_nodo.sig = nodo_actual
+                nodo_actual.ant= nuevo_nodo
+                nuevo_nodo.ant = nodo_anterior
                 nodo_anterior.sig = nuevo_nodo
             return True
         else:
@@ -162,12 +183,18 @@ class LSE:
         print (lista_nuevos)
         """
         nodo_actual = self.cab
-        res = ""
+        res = "None"
         while nodo_actual is not None:
-            res+="["+str(nodo_actual.dato)+"]->"
+            res+="<-["+str(nodo_actual.dato)+"]->"
             nodo_actual = nodo_actual.sig
         res+="None"
         return res
+
+    def __iter__(self):
+        nodo_actual = self.cab
+        while nodo_actual is not None:
+            yield(nodo_actual.dato)
+            nodo_actual = nodo_actual.sig
 
 
     """
