@@ -1,4 +1,12 @@
-"use strict";
+// function holaMundo(nombre : string):string{
+//   return "Hola Mundo Soy: "+nombre;
+// }
+//
+// var nombre : string = "Miguel";
+// let resultado : string = holaMundo(nombre);
+//
+// document.getElementById("container").innerHTML=resultado;
+//import "./modulos";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -9,16 +17,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-exports.__esModule = true;
-// function holaMundo(nombre : string):string{
-//   return "Hola Mundo Soy: "+nombre;
-// }
-//
-// var nombre : string = "Miguel";
-// let resultado : string = holaMundo(nombre);
-//
-// document.getElementById("container").innerHTML=resultado;
-require("./modulos");
 var Humano = tierra.Humano;
 var Persona = (function (_super) {
     __extends(Persona, _super);
@@ -44,4 +42,4 @@ var Persona = (function (_super) {
 var mario = new Persona();
 mario.darNombre("Camilo");
 console.log(mario.saludar());
-console.log(mario.colorPiel);
+console.log(mario.darColor());

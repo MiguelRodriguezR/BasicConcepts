@@ -6,7 +6,8 @@
 // let resultado : string = holaMundo(nombre);
 //
 // document.getElementById("container").innerHTML=resultado;
-import "./modulos";
+//import "./modulos";
+
 import Humano = tierra.Humano;
 class Persona extends Humano{
     saludo: string;
@@ -38,4 +39,4 @@ class Persona extends Humano{
 var mario = new Persona();
 mario.darNombre("Camilo");
 console.log(mario.saludar());
-console.log(mario.colorPiel);
+console.log(mario.darColor());

@@ -4,7 +4,7 @@ var tierra;
         function Humano() {
         }
         Humano.prototype.darColor = function () {
-            return this.colorPiel;
+            return "mi color es: " + this.colorPiel;
         };
         return Humano;
     }());

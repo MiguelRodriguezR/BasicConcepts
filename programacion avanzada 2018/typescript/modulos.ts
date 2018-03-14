@@ -8,7 +8,7 @@ module tierra{
     }
 
     darColor():string{
-      return this.colorPiel;
+      return "mi color es: "+this.colorPiel;
     }
 
   }
