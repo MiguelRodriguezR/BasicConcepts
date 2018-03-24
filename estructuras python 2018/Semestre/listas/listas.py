@@ -50,7 +50,7 @@ class LDE:
         sino)
         """
         if(self.homogeneidad(nuevo_dato)):
-            nuevo_nodo = NodoLDE(nuevo_dato)  # Crear nuevo nodo con la importacio
+            nuevo_nodo = NodoLDE(nuevo_dato)  
             if self.es_vacia():
                 self.cab = nuevo_nodo
                 self.pie = self.cab
