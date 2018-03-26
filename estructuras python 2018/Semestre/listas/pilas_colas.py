@@ -1,31 +1,6 @@
 from nodos import NodoLSE
 from validación import Validacion
-
-
-# def validar_homogeneidad(nodo, dato):
-#     if nodo is not None:
-#         if isinstance(dato, type(nodo.dato)):
-#             return True
-#     return False
-
-
-class Objeto1():
-    """docstring for objeto1"""
-    def __init__(self, num):
-        self.num = num
-
-    def __str__(self):
-        return("Clase Objeto1..."+str(self.num))
-
-
-class Objeto2():
-    """docstring for objeto2"""
-    def __init__(self, num):
-        self.num = num
-
-    def __str__(self):
-        return("Clase Objeto2..."+str(self.num))
-
+from objetos_Prueba import *
 
 class NodoPila(NodoLSE):
     pass
