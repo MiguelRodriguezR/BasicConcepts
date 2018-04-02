@@ -7,6 +7,7 @@
 //
 // document.getElementById("container").innerHTML=resultado;
 //import "./modulos";
+//ss
 
 import Humano = tierra.Humano;
 class Persona extends Humano{

@@ -1,12 +1,11 @@
 var tierra;
 (function (tierra) {
-    var Humano = (function () {
-        function Humano() {
+    class Humano {
+        constructor() {
         }
-        Humano.prototype.darColor = function () {
+        darColor() {
             return "mi color es: " + this.colorPiel;
-        };
-        return Humano;
-    }());
+        }
+    }
     tierra.Humano = Humano;
 })(tierra || (tierra = {}));
