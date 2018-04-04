@@ -1,0 +1,75 @@
+.slider{
+  padding: 3px;
+  margin: 2px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+img{
+  margin: 3px;
+  width: 28%;
+  height: 10%;
+
+}
+
+.left{
+  position: relative;
+  float: left;
+}
+.right{
+  position: relative;
+  float: right;
+}
+.actual{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 40%
+}
+
+section{
+  background: white
+}
+
+button{
+  margin: 10px;
+  margin-top: 10%;
+  font-size: 30px;
+  background-color: #333333;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s;
+
+}
+
+button:hover{
+  background-color: #CCCCCC;
+  color: black;
+}
+
+.leftButton{
+  float: left;
+}
+
+.rightButton{
+  float: right;
+}
+
+
+.desc-Container{
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+h3{
+  background: #333333;
+  color: white;
+  margin: 3px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 5px;
+  text-align: center;
+  font-family: 'Arial';
+  font-size: 20px;
+}
