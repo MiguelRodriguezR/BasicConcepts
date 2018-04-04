@@ -1,0 +1,83 @@
+body {
+
+  background: #ADA996;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+	font-family: Lucida Sans Unicode;
+  font-size: 0.9em;
+}
+
+section{
+
+  width: 80%;
+  display: block;
+  /* border: solid 1px;
+  border-radius: 10px;
+  box-shadow: 5px 10px; */
+  margin: auto;
+}
+
+
+button{
+
+  font-family: 'Arial';
+  font-size: 30px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  cursor: pointer;
+  /* background-color: #AAAAAA; */
+}
+
+h1{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  color: white;
+  text-shadow: 2px 2px 2px #000000;
+}
+
+.butt{
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.pregunta{
+  margin: auto;
+  margin-bottom: 15px;
+  background: #FFFFFF;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 15px;
+  width: 70%;
+}
+
+.correcto{
+  background: #89AC76;
+  color: white;
+}
+
+.incorrecto{
+  background: #8E402A;
+  color: white;
+}
+
+
+#total{
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+#total p{
+  margin: 10px;
+}
+
+#malas{
+  color: red;
+}
+#buenas{
+  color: green;
+}

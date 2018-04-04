@@ -1,0 +1,36 @@
+
+function convert() {
+  var value = document.querySelector("input").value;
+  if(Math.floor(value) == value && value<=1000 && value>0){
+    var resp= value+" en romanos es: "+romanize(value)
+    document.querySelector("#resp").innerHTML=resp;
+  }
+}
+
+function romanize (num) {
+  var dictionary =
+    { M:1000,
+      CM:900,
+      D:500,
+      CD:400,
+      C:100,
+      XC:90,
+      L:50,
+      XL:40,
+      X:10,
+      IX:9,
+      V:5,
+      IV:4,
+      I:1
+    };
+  var roman = '';
+  var i;
+  for ( i in dictionary ) {
+    while ( num >= dictionary[i] ) {
+      console.log("numero:"+num+" romano:"+i+" se quitará: "+dictionary[i]);
+      roman += i;
+      num -= dictionary[i];
+    }
+  }
+  return roman;
+}
