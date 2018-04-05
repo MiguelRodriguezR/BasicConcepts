@@ -6,7 +6,7 @@ var descriptions = [
   "<b>XJ6</b><br> Marca : Yamaha<br>Cilindraje : 600cc<br>Uso: City Bike - Naked",
   "<b>R6</b><br> Marca : Yamaha<br>Cilindraje : 599cc<br>Uso: City Bike",
   "<b>Ninja</b><br> Marca : Kawasaki<br>Cilindraje : 300cc<br>Uso: City Bike",
-  "<b>Monster 796s</b><br> Marca : Yamaha<br>Cilindraje : 796cc<br>Uso: Traveling",
+  "<b>Monster 796s</b><br> Marca : Ducati<br>Cilindraje : 796cc<br>Uso: Traveling",
 ]
 
 

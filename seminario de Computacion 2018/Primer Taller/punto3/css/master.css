@@ -62,7 +62,7 @@ button:hover{
   justify-content: center;
 }
 
-h3{
+.desc-Container h3{
   background: #333333;
   color: white;
   margin: 3px;

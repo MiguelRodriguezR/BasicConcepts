@@ -1,0 +1,86 @@
+body{
+  margin: 0px;
+  font-family: Lucida Sans Unicode;
+}
+
+h1{
+  font-size: 1.5 em;
+}
+
+p{
+  margin: 2px;
+}
+
+.menu button{
+  font-family: Lucida Sans Unicode;
+  font-size: 1em;
+  width: 100%;
+  background-color: #222222;
+  border: none;
+  color: white;
+  padding: 10%;
+  cursor: pointer;
+  margin: 3px;
+  transition: all 0.3s;
+
+}
+
+.menu button:hover{
+  width: 90%;
+  box-shadow: 5px 0px;
+}
+
+.active{
+  max-height: 1000px;
+  overflow: hidden;
+  transition: all 1s ease-in;
+}
+
+.hidden{
+  max-height: 0px;
+  overflow: hidden;
+  transition: all 0.8s ease;
+}
+
+.formulario{
+  font-size: 1em;
+  padding: 15px;
+  float: left;
+
+}
+
+.menu{
+  display: block;
+  float: left;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.69);
+  background: #333333;
+  color: white;
+  margin: 0;
+
+  height:100vh;
+}
+
+.error{
+
+  background: #8E402A;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 15px;
+  width: 70%;
+}
+
+.total{
+
+  background: #89AC76;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 15px;
+  width: 70%;
+  font-size: 0.8em;
+}
+
+.menu h1{
+  padding: 30px;
+}

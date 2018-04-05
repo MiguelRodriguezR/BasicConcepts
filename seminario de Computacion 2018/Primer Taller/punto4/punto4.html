@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="js/app.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="css/master.css">
+  <title>Practica</title>
+</head>
+<body>
+  <section>
+    <div class="menu">
+      <h1>Práctica Académica</h1>
+      <button type="button" onclick="getForm(1)">Datos de Viaje</button><br>
+      <button type="button" onclick="getForm(2)">Personal</button><br>
+      <button type="button" onclick="getForm(3)">Peajes</button><br>
+      <button type="button" onclick="getForm(4)">Bus</button><br>
+      <button type="button" onclick="getResum()">Resumen</button>
+      <button type="button" onclick="resetear()">Reiniciar</button>
+    </div>
+    <div class="formulario" >
+      <form class="" action="" onsubmit="return false">
+        <div id="f1" class="active">
+          <h1>Datos de viaje</h1>
+          <h3>Destino de práctica :
+          <select id="destino" onchange="setKilometros()">
+            <option value="Bogota Distancia km: 998">Bogotá 998km</option>
+            <option value="Cali Distancia km: 410">Cali 410km</option>
+            <option value="Popayan Distancia km: 220">Popayán 220km</option>
+            <option value="Tumaco Distancia km: 380">Tumaco 380km</option>
+            <option value="Neiva Distancia km: 890">Neiva 890km</option>
+            <option value="Medellin Distancia km: 950">Medellín 950km</option>
+          </select>
+          </h3>
+          <h3>Fecha de salida :
+          <input type="date" id="fechaSalida" required onchange="actualizarDiasViaje()">
+
+          </h3>
+          <h3>Fecha de llegada :
+          <input type="date" id="fechaLlegada" required onchange="actualizarDiasViaje()" >
+
+          </h3>
+          <h3>Hora de salida :
+          <input type="time" id="horaSalida"  required value="" >
+          </h3>
+          <h3>Hora de llegada :
+          <input type="time" id="horaLlegada"  required value="" >
+          </h3>
+          <h3>Lugar de salida :
+          <input type="text" id="lugarSalida" required value="" placeholder="Lugar de Salida">
+          </h3>
+          <h3>Dias de viaje:
+          <input type="text" readonly id="diasViaje" value="">
+          </h3>
+        </div>
+        <div id="f2" class="hidden">
+          <h1>Personal</h1>
+          <h3>Docente responsable: <input required type="text" id="docenteResp" placeholder="docente">
+          </h3>
+          <h3>Cantidad de estudiantes: <input min="10" max="30" id="cantidadEstudiant" required type="number">
+          </h3>
+          <h3>Conductor:
+            <select id="conductor">
+              <option value="Francisco">Franciso</option>
+              <option value="Pedro">Pedro</option>
+              <option value="Juan">Juan</option>
+              <option value="Pablo">Pablo</option>
+              <option value="Ricardo">Ricardo</option>
+            </select>
+          </h3>
+          <h3>Valor de viaticos para estudiantes:
+            <input type="number" min="3500" max="20000" id="viaticosEstudiant" required>
+          </h3>
+          <h3>Valor de viaticos para conductor:
+            <input type="number" min="3500" max="20000" id="viaticosConductor" required>
+          </h3>
+          <h3>Valor de viaticos para responsable:
+            <input type="number" min="3500" max="20000" id="viaticosDocente" required>
+          </h3>
+        </div>
+        <div id="f3" class="hidden">
+          <h1>Peajes</h1>
+          <h3>Peaje tipo A: <input required type="number" id="tipoACantidad">
+          </h3>
+          <h3>Peaje tipo A Costo: <input required type="number" id="tipoACosto"></h3>
+          <h3>Peaje tipo B: <input required type="number" id="tipoBCantidad">
+          </h3>
+          <h3>Peaje tipo B Costo: <input required type="number" id="tipoBCosto"></h3>
+          <h3>Peaje tipo C: <input required type="number" id="tipoCCantidad">
+          </h3>
+          <h3>Peaje tipo C Costo: <input required type="number" id="tipoCCosto"></h3>
+        </div>
+        <div id="f4" class="hidden">
+          <h1>Bus</h1>
+          <h3>Placa :
+            <select required id="placa">
+              <option value="KAE-122">KAE-122</option>
+              <option value="KFE-341">KFE-341</option>
+              <option value="AAE-125">AAE-125</option>
+              <option value="KDS-442">KDS-442</option>
+              <option value="AAE-223">AAE-223</option>
+              <option value="QTA-632">QTA-632</option>
+            </select>
+          </h3>
+          <h3>Tipo combustible :
+            <select required id="combustible" size="2">
+              <option value="Gasolina">Gasolina</option>
+              <option value="ACPM">ACPM</option>
+            </select>
+          </h3>
+          <h3>Kilometraje recorrido : <input type="text" id="kilometrajeRecorrido" value="998km" readonly></h3>
+          <h3>Cantidad de galones : <input type="number" id="cantidadGalones" min="0" required></h3>
+          <h3>Costo del Galon : <input type="number" id="costoGalon" required></h3>
+        </div>
+        <div id="f5" class="hidden">
+        </div>
+      </div>
+    </form>
+  </section>
+
+</body>
+</html>
