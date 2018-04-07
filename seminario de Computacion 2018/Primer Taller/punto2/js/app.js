@@ -101,30 +101,37 @@ var preguntas = {
    ]
 }
 
-window.onload = function(){
-  var form = document.querySelector("form");
+
+
+
+
+
+function iniciar(){
+  var form = $("form");
   for (var x in preguntas){
-    form.innerHTML+=
+    form.append(
     "<div class='pregunta' id='p"+x+"'>"+
       "<p>"+
         preguntas[x][0]+
       "</p>"+
       "<input type='radio' name='"+x+"' value='A'>"+
-      "A) "+preguntas[x][1]+"<br>"+
+        "A) "+preguntas[x][1]+"<br>"+
       "<input type='radio' name='"+x+"' value='B'>"+
-      "B) "+preguntas[x][2]+"<br>"+
+        "B) "+preguntas[x][2]+"<br>"+
       "<input type='radio' name='"+x+"' value='C'>"+
-      "C) "+preguntas[x][3]+"<br>"+
+        "C) "+preguntas[x][3]+"<br>"+
       "<input type='radio' name='"+x+"' value='D'>"+
-      "D) "+preguntas[x][4]+"<br>"+
-    "</div>";
+        "D) "+preguntas[x][4]+"<br>"+
+    "</div>");
   }
 }
+
 
 function calificar() {
   var correctas=0,incorrectas=0;
   for (var x in preguntas){
     var radio = document.querySelectorAll('input[name="'+x+'"]');
+    console.log(radio);
     var correcto = false;
     radio.forEach(function(r){
 	      if(r.checked){
@@ -144,9 +151,16 @@ function calificar() {
     }
 
   }
-  document.querySelector('#total').innerHTML ="<p id='buenas'></p><p id='malas'></p>"+
-    "<p>Calificacion: "+((correctas*5.0)/(correctas+incorrectas))+"</p>";
-  document.querySelector('#buenas').innerHTML = "Respuestas Correctas: "+correctas;
-  document.querySelector('#malas').innerHTML = "Respuestas Incorrectas: "+incorrectas;
-  document.querySelector('button').hidden = true;
+  $('#total').html("<p id='buenas'></p><p id='malas'></p>"+
+    "<p>Calificacion: "+((correctas*5.0)/(correctas+incorrectas))+"</p>");
+  $('#buenas').html("Respuestas Correctas: "+correctas);
+  $('#malas').html("Respuestas Incorrectas: "+incorrectas);
+  $('button').hide( "slow",()=>{});
 }
+
+
+
+$(document).ready(function(){
+  iniciar();
+  $('button').click(calificar);
+});

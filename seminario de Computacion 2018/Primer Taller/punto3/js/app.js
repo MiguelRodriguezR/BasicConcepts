@@ -11,12 +11,14 @@ var descriptions = [
 
 
 
-window.onload = function() {
+$(document).ready(function(){
   showSlides(slideIndex);
-}
+  $('#leftButton').click(()=>{pasar(-1)});
+  $('#rightButton').click(()=>{pasar(1)});
+});
 
 function showSlides(slide) {
-  var slider = document.querySelector("#slider");
+  var slider = $("#slider");
 
   var posLeft = slide-1;
   var posRight = slide+1;
@@ -29,10 +31,10 @@ function showSlides(slide) {
   var left = "<img class='left' src='images/p"+posLeft+".jpg' >";
   var actual = "<img class='actual' src='images/p"+slide+".jpg' >";
   var right = "<img class='right' src='images/p"+posRight+".jpg' >";
-  slider.innerHTML=left+actual+right;
+  slider.html(left+actual+right);
 
-  var descContainer = document.querySelector(".desc-Container");
-  descContainer.innerHTML="<h3>"+descriptions[slide]+"</h3>"
+  var descContainer = $(".desc-Container");
+  descContainer.html("<h3>"+descriptions[slide]+"</h3>");
 }
 
 function pasar(towhere){

@@ -1,11 +1,11 @@
-
-function convert() {
-  var value = document.querySelector("input").value;
-  if(Math.floor(value) == value && value<=1000 && value>0){
+$(document).ready(function(){
+  $("form").submit(function(evt){
+    evt.preventDefault();
+    var value = $("input").val();
     var resp= value+" en romanos es: "+romanize(value)
-    document.querySelector("#resp").innerHTML=resp;
-  }
-}
+    $("#resp").html(resp);
+  });
+});
 
 function romanize (num) {
   var dictionary =

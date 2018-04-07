@@ -73,6 +73,10 @@ h1{
 
 #total p{
   margin: 10px;
+  font-size: 20px;
+  border: dotted 2px;
+  padding: 5px;
+  margin-bottom: 30px;
 }
 
 #malas{
