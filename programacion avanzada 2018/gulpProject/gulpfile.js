@@ -3,10 +3,11 @@ var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 var connect = require('gulp-connect');
 var pump = require('pump');
+var concat = require('gulp-concat');
 
 htmlSources = ['*.html'];
 
-gulp.task('default', defaultTask);
+//gulp.task('default', defaultTask);
 
 
 function defaultTask(done) {
@@ -29,21 +30,31 @@ gulp.task('copy',(done)=>{
 // folder/*.html - will match all the HTML files in folder
 // root/**/*.html - will match all the HTML files in all the folders from root to its children
 
-gulp.task('sass',()=>{
+gulp.task('sass',(done)=>{
   return gulp.src('styles/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('assets'));
+    done();
 });
 
 // creando un whatcher para sass
 
-gulp.task('sass:watch', function () {
+gulp.task('sass:watch', function (done) {
   gulp.watch('styles/*.scss', gulp.parallel('sass'));
+  done();
+});
+
+
+gulp.task('concat', function(done) {
+  return gulp.src('js/*.js')
+    .pipe(concat('all.js'))
+    .pipe(gulp.dest('concat/'));
+    done();
 });
 
 gulp.task('compress', (done) => {
   pump([
-        gulp.src('js/*.js'),
+        gulp.src('concat/*.js'),
         uglify(),
         gulp.dest('assets')
     ],
@@ -51,19 +62,26 @@ gulp.task('compress', (done) => {
   );
 });
 
+
+
 //gulp.task('default', gulp.parallel('sass','copy'));
 
 
-gulp.task('connect',()=>{
+gulp.task('connect',(done)=>{
   connect.server({
    root: '.',
    livereload: true
   })
+  done();
 });
 
-gulp.task('html',()=>{
+gulp.task('html',(done)=>{
   gulp.src(htmlSources)
   .pipe(connect.reload())
+  done();
 });
 
-gulp.task('default', gulp.parallel('html', 'compress', 'sass', 'connect', 'sass:watch'));
+
+gulp.task('compact',gulp.series('concat', 'compress'));
+gulp.task('runall',gulp.series('html','compact','sass','connect'));
+gulp.task('default', gulp.parallel('runall', 'sass:watch'));
