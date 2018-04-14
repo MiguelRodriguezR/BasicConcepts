@@ -112,3 +112,16 @@ if __name__ == '__main__':
     print(cola.frente())
     print(cola.final())
     print(len(cola))
+
+    print ("==========")
+    cola.desencolar()
+    print(cola.frente())
+    print(cola.desencolar())
+    print(cola.final())
+    print ("==========")
+
+    for x in cola:
+        print(x)
+
+    print ("==========")
+    print(cola.final())
