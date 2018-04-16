@@ -4,6 +4,7 @@ var uglify = require('gulp-uglify');
 var connect = require('gulp-connect');
 var pump = require('pump');
 var concat = require('gulp-concat');
+const imagemin = require('gulp-imagemin');
 
 htmlSources = ['*.html'];
 
@@ -75,13 +76,20 @@ gulp.task('connect',(done)=>{
   done();
 });
 
-gulp.task('html',(done)=>{
-  gulp.src(htmlSources)
-  .pipe(connect.reload())
-  done();
-});
+// gulp.task('html',(done)=>{
+//   gulp.src(htmlSources)
+//   .pipe(connect.reload())
+//   done();
+// });
 
 
-gulp.task('compact',gulp.series('concat', 'compress'));
-gulp.task('runall',gulp.series('html','compact','sass','connect'));
+gulp.task('images', () =>
+	gulp.src('images/*')
+		.pipe(imagemin())
+		.pipe(gulp.dest('assets/images'))
+);
+
+
+gulp.task('compact',gulp.series('concat','compress','images'));
+gulp.task('runall',gulp.series('compact','sass','connect'));
 gulp.task('default', gulp.parallel('runall', 'sass:watch'));
