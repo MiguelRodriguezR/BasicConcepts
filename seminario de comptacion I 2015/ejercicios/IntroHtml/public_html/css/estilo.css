@@ -1,0 +1,74 @@
+/* 
+    Created on : 16/02/2016, 03:09:17 PM
+    Created by : Andres Benavides
+    Author     : UIT
+*/
+body{
+    background-color: #666666
+}
+h1{
+    background-color: #000000;
+   color:red;
+   text-align:  center;
+   }
+h2, nav{
+   text-align: center; 
+}
+nav{
+    
+}
+a{
+    display: inline-block;
+    height: 30px;
+    width: 120px;
+    text-align: center;
+    border: 2px black outset;
+    /*  grosro  color   estilo */
+    background-color: #9e4f4f ;
+    color: white;
+    text-decoration: none;
+    line-height: 30px;
+    cursor: pointer;
+    box-shadow: 3px 2px 3px  #eea4a4;
+    text-shadown: 1px 1px 1px black;
+    /* border-radius: 10px; */
+    border-radius: 10px 10px 0px 0px;
+    margin: 20px;
+    padding: 5px;
+}
+a:hover{
+    background-color: red;
+    color:yellow;
+}
+a:active{
+    background-color: #a9a4ee;
+    color:black;
+}
+#img1{
+    display: block;
+    width: 70%;
+    margin:auto;
+}
+#logo{
+    position: absolute;
+    left: 50px;
+    top: 80px;
+    height: 100px;
+    width: 100px;
+}
+table{
+    width: 70%;
+    border-collapse: collapse;
+    margin: auto;
+}
+th{
+    background-color: brown;
+    color:white;
+}
+td{
+    background-color: white;
+    color:black;
+}
+tbody tr :hover{
+    color: blue;
+}

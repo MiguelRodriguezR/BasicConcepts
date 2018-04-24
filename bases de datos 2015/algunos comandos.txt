@@ -1,0 +1,7 @@
+Crea un nuevo usuario en la base de datos:
+
+createuser nombre_usuario
+
+Crea una nueva base de datos asignando el usuario que acabas de crear como propietario de dicha base de datos:
+
+ createdb nombre_base_datos --owner nombre_usuario

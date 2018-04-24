@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Empresa de Cueros Pasto - Nariño</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link  href="css/estilo.css" rel="stylesheet">
+        <style>
+            form{
+                border: 5px black solid;
+                border-radius: 10px;
+                width: 500px;
+                margin: auto;
+                padding: 20px;
+            }
+            label{
+                display: inline-block;
+                width: 180px;
+            }
+            input{
+                margin-top: 10px;
+            }
+            .cajas{
+                font-weight: bold;
+            }
+            .cajas:focus{
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <h1> Empresa de Cueros La Finca</h1>
+        <h2> Pasto - Nariño </h2>
+        <nav> 
+            <a href="index.html"> Inicio </a>
+            <a href="productos.html"> Productos </a>
+            <a href="#"> Servicios </a>
+            <a href="clientes.html"> Clientes </a>
+        </nav>
+        <hr>
+        <img id="logo" src="images/logo.png" alt="logotipo">
+        <h2> Registro de Clientes </h2>
+        <form>
+            <label>Cedula</label>
+            <input type="number" class="cajas" min="1" name="txtced" required><br>
+            <label> Nombre </label>
+            <input type="text" class="cajas" maxlength="50" name="txtnom" required><br>
+            <label>e-Mail</label>
+            <input type="email" class="cajas" name="txtema" required><br>
+            <label>Fecha de Nacimiento</label>
+            <input type="date" class="cajas" name="txtfec"><br>
+            <label>Genero</label>
+            M<input type="radio" name="optgen" value="m"> &nbsp;&nbsp;&nbsp;
+            F<input type="radio" name="optgen" value="f" checked><br>
+            <label>Profesión</label>
+            <select name="lstpro"> <!-- permite crear listas de´plazables-->
+                <option value="1"> Ingeniero </option>
+                <option value="2"> Administrador </option>
+                <option value="3"> Medico </option>
+                <!-- envia el valor de la opcion que se selecciono -->
+            </select>
+            <br>
+            <!-- otra manera de crear listas-->
+            <label>Seleccione el navegador de mas uso</label>
+            <input type="text" name="txtnav" list="lista1" required>
+            <datalist id="lista1">
+                <option value="chrome" label="1">
+                <option value="Internet Explorer" label="2">
+                <option value="Mozilla" label="3">
+            </datalist>
+            <br>
+            <!-- checkbox -->
+            <label>Estudios Realizados</label>
+            primarios <input type="checkbox" name="chkpri" value="p">
+            secundarios<input type="checkbox" name="chksec" value="s">
+            Superiores<input type="checkbox" name="chkpos" value="u">
+            <!-- PATTERN :-->
+            <label>Placa de Vehiculo</label>
+            <input type="text" name="textpla" pattern="[A-Z]{3}[0-9]{2}[A-Z0-9]{1}" placeholder="Ej: ABC123  o  ABC12D">
+            <hr>
+            <input type="submit" class="cajas" value="Registrar">
+            <input type="reset" class="cajas" value="limpiar">
+            <input type="button" class="cajas" value="ir a...">
+                        
+        </form>
+    </body>
+</html>

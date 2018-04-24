@@ -1,0 +1,31 @@
+DEBUG: depurar
+D -> Muestra contenido de un area de memoria
+
+direccion		 |	contenido hexadecimal |	conte ASCII
+XXXX HEX: XXXX   HEX     | 00 00 00 00 _ 00 00 00 00  |................
+segmento  desplazamiento |			      |	
+
+R -> Muestra el contenido de los registros
+
+A -> Instrucciones simbolicas
+
+T -> Ejecuta una Instruccion
+
+E -> Introducir datos en memoria indicando localidad especifica
+
+U (desde),(hasta) -> PASAR DE SIMBOLICO A LENGUAJE MAQUINA
+
+CMP ax,3 -> compara si ax es 3
+
+JE -> si la alterior comparacion ES IGUAL salta a una etiqueta
+
+JNE -> si la alterior comparacion NO ES IGUAL salta a una etiqueta
+
+JZ -> si la alterior comparacion ES IGUAL A CERO salta a una etiqueta
+
+JNZ -> si la alterior comparacion NO ES IGUAL A CERO salta a una etiqueta
+
+JMP -> salta sin mirar condiciones
+
+
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <link href="css/estilo.css" rel="stylesheet">
+        <title>CALCULADORA</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/jquery.js"></script>
+        <script src="js/codigo1.js"></script>
+        
+        
+    </head>
+    <body>
+        <h1> CALCULADORA </h1>
+        <form id="frm1">
+            <label> Operando 1 </label>
+            <input type="number" min="1" max="1000" required name="txt1" id="txt1"><br>
+            <label> Operando 2 </label>
+            <input type="number" min="1" max="1000" required name="txt2" id="txt2"><br>
+            <label> Operador </label>
+            <select name="lstope" id="lstope">
+                <option value="+"> Suma </option>
+                <option value="-"> resta </option>
+                <option value="*"> Multiplicar </option>
+                <option value="/"> Dividir </option>
+            </select><hr>
+            <input type="button" id="btn1" value="calcular button">
+            <input type="submit" id="btn2" value="calcular submit">
+            
+        </form>
+                
+    </body>
+</html>

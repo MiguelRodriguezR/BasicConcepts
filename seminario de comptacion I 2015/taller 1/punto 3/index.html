@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cajero</title>
+	<script src='js/jquery.js'></script>
+	<script src="js/jquery-ui.js"></script>
+    <script src="js/jquery.ui.datepicker-es.js"></script>
+    <link href="css/jquery-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+	<div class="centrado">
+		<!-- cajero  -->
+		<div style="position:absolute; top:36px; left:240px; visibility:visible z-index:0"> 
+			<img SRC="images/cajero.fw.png"> 
+		</div> 
+		
+		<!-- teclado numerico -->
+		<div style="position:absolute; top:435px; left:402px; visibility:visible z-index:1"> 
+			<a id="b1"><img SRC="images/1.fw.png"></a> 
+		</div> 
+		<div style="position:absolute; top:435px; left:432px; visibility:visible z-index:1"> 
+			<a id="b2"><img SRC="images/2.fw.png"></a> 
+		</div> 
+		<div style="position:absolute; top:434px; left:462px; visibility:visible z-index:1"> 
+			<a id="b3"><img SRC="images/3.fw.png"></a> 
+		</div> 
+
+		<div style="position:absolute; top:450px; left:402px; visibility:visible z-index:1"> 
+			<a id="b4"><img SRC="images/4.fw.png"></a> 
+		</div> 
+		<div style="position:absolute; top:450px; left:432px; visibility:visible z-index:1"> 
+			<a id="b5"><img SRC="images/5.fw.png"></a> 
+		</div> 
+		<div style="position:absolute; top:450px; left:462px; visibility:visible z-index:1"> 
+			<a id="b6"><img SRC="images/6.fw.png"></a> 
+		</div>
+
+		<div style="position:absolute; top:465px; left:402px; visibility:visible z-index:1"> 
+			<a id="b7"><img SRC="images/7.fw.png"></a> 
+		</div> 
+		<div style="position:absolute; top:465px; left:432px; visibility:visible z-index:1"> 
+			<a id="b8"><img SRC="images/8.fw.png"></a> 
+		</div> 
+		<div style="position:absolute; top:466px; left:463px; visibility:visible z-index:1"> 
+			<a id="b9"><img SRC="images/9.fw.png"></a> 
+		</div>
+
+		<div style="position:absolute; top:481px; left:433px; visibility:visible z-index:1"> 
+			<a id="b0"><img SRC="images/0.fw.png"></a> 
+		</div>
+
+		<!-- botones derecha-->
+		<div style="position:absolute; top:435px; left:501px; visibility:visible z-index:1"> 
+			<a id="br"><img SRC="images/rojo.fw.png"></a> 
+		</div> 
+		<div style="position:absolute; top:450px; left:500px; visibility:visible z-index:1"> 
+			<a id="ba"><img SRC="images/amarillo.fw.png"></a> 
+		</div>
+
+		<div style="position:absolute; top:466px; left:501px; visibility:visible z-index:1"> 
+			<a id="bv"><img SRC="images/verde.fw.png"></a> 
+		</div>
+
+
+
+		<!-- pantalla-->
+		<div style="position:absolute; top:172px; left:275px; visibility:visible z-index:2" > 
+			<iframe src="interfas.html" width="362" scrolling="no" height="232" frameBorder="0" id="iframe">
+  				<p>Your browser does not support iframes.</p>
+			</iframe>
+
+		</div>
+	</div>
+
+	<!-- retiro-->
+	<div style="position:absolute; top:496px; left:291px; visibility:visible z-index:0"> 
+		<div class="toggler" >
+		  <div id="effect" class="ui-widget-content ui-corner-all" >
+		    <img src="images/5000.jpeg" class="billete" id="ima">
+		  </div>
+		</div>
+	</div>
+	
+ 	<script src="js/javascriptPadre.js"></script>	
+</body>
+</html>

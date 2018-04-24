@@ -1,0 +1,93 @@
+-- phpMyAdmin SQL Dump
+-- version 3.5.2.2
+-- http://www.phpmyadmin.net
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 06-04-2013 a las 18:19:38
+-- Versión del servidor: 5.5.27
+-- Versión de PHP: 5.4.7
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Base de datos: `empresa`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `cargos`
+--
+
+CREATE TABLE IF NOT EXISTS `cargos` (
+  `codcar` int(3) NOT NULL,
+  `nomcar` varchar(20) NOT NULL,
+  `depend` varchar(10) NOT NULL,
+  PRIMARY KEY (`codcar`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `cargos`
+--
+
+INSERT INTO `cargos` (`codcar`, `nomcar`, `depend`) VALUES
+(1, 'Gerente', 'General'),
+(2, 'Jefe Sistemas', 'Sistemas'),
+(3, 'Secretaria General', 'General'),
+(4, 'Auxiliar Sistemas', 'Sistemas'),
+(5, 'Programador', 'Sistemas'),
+(6, 'Sub-Gerente', 'General');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `empleados`
+--
+
+CREATE TABLE IF NOT EXISTS `empleados` (
+  `cedemp` int(10) NOT NULL,
+  `nomemp` varchar(50) NOT NULL,
+  `numofi` int(3) NOT NULL,
+  `codcar` int(3) NOT NULL,
+  `telofi` int(10) NOT NULL,
+  `exteofi` int(3) NOT NULL,
+  PRIMARY KEY (`cedemp`),
+  KEY `codcar` (`codcar`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `empleados`
+--
+
+INSERT INTO `empleados` (`cedemp`, `nomemp`, `numofi`, `codcar`, `telofi`, `exteofi`) VALUES
+(100, 'Luis Estrada', 101, 1, 7303030, 200),
+(101, 'Ana Pacheco', 102, 2, 7303030, 230),
+(102, 'Jose Paz', 102, 3, 7303030, 230),
+(103, 'Marta Acosta', 102, 4, 7303030, 231),
+(104, 'Janeth Pedraza', 106, 4, 7303030, 230),
+(105, 'Jairo Guerreo', 106, 4, 7303030, 230),
+(106, 'Marina Cortez', 106, 2, 7303030, 230),
+(107, 'Josefa Diaz', 201, 5, 7303030, 230),
+(112, 'Maria Lopez', 401, 3, 7235500, 200),
+(768, 'Juan Castrillon', 401, 3, 300, 100);
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `empleados`
+--
+ALTER TABLE `empleados`
+  ADD CONSTRAINT `empleados_ibfk_1` FOREIGN KEY (`codcar`) REFERENCES `cargos` (`codcar`) ON UPDATE CASCADE;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

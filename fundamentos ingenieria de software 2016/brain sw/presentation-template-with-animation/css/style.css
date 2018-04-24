@@ -1,0 +1,20 @@
+body{
+background: radial-gradient(ellipse at center, #e53437 0%,#c90404 30%,#680600 70%);
+}
+
+.reveal p{
+  font-size: 1.2em;
+  line-height: 1.3em;
+}
+
+.reveal p.shadow{
+	margin-top: 100px;
+  text-shadow: 2px 2px 6px #000;
+}
+
+.reveal p small{
+	font-size: .8em;
+	color:rgba(0,0,0,.6);
+  margin: 50px;
+}
+

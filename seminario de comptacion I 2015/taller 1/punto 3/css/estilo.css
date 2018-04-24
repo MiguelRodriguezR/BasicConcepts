@@ -1,0 +1,31 @@
+body{
+
+	background-image: url("../images/banco.jpg");
+	background-size: 1400px 800px;
+	background-position: top; 
+    background-repeat: no-repeat;
+}
+
+.billete{
+	width: 200px; height: 100px;
+}
+
+.toggler { width: 200px; height: 100px; }
+  #button { padding: .5em 1em; text-decoration: none; }
+  #effect { width: 98%; height: 98%; padding: 0.4em; position: relative; }
+  #effect h3 { margin: 0; padding: 0.4em; text-align: center; }
+
+.diagrama{
+	margin: auto;
+	padding: 1em; 
+	text-align: center;
+
+
+}
+.respuesta{
+	margin: auto;
+	padding: 0.4em; 
+	text-align: center;
+
+
+}

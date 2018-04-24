@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cueros de Nariño</title>
+	<link href="css/surface_styles.css" rel="stylesheet">
+</head>
+<body>
+	
+	<header class="container--baseline bg--black no-margin-vertical">
+	  <h1 class="m--1 g--4">Empresa de Cueros</h1>
+	  <nav class="g--8 nav--horizontal color--pink ">
+	    <ul>
+	      <li><a href="index.html"><div class="color--black">Inicio</div></a></li>
+	      <li><a href="productos.html"><div class="color--merald">Productos</div></a></li>
+	      <li><a href="#"><div class="color--black">Servicios</div></a></li>
+	      <li class="dropdown"><a href="clientes.html"><div class="color--black">Clientes</div></a></li>
+	    </ul>
+	  </nav>
+	</header>
+	<input type="checkbox" id="nav--super-vertical-responsive">
+	<label for="nav--super-vertical-responsive">MENU</label>
+	<aside class="nav--super-vertical g--2 g-m--3 g-s--6 g-t--12 no-margin-vertical">
+		<div class="g--12 logo-area no-margin-vertical">
+			<h1 class="color--green no-margin-vertical">Cueros Velez</h1>
+		</div>
+		<nav class="g--12 no-margin-vertical">
+			<a href="index.html">Inicio</a>
+			<a href="productos.html">Productos</a>
+			<a href="clientes.html">Clientes</a>
+		</nav>
+	</aside>
+	<main class="fade-in-from-left g--8 g-m--0 m--3 m-m--0 ">
+		<form>
+            <input type="text" required placeholder="Cedula">
+            <input type="text" required placeholder="Nombre">
+            <input type="text" required placeholder="Email">
+            <input type="text" required placeholder="Fecha de Nacimiento">
+            <label>Genero</label>
+            <br>
+            <label class="m--1">Femenino</label>
+            <input type="radio" name="gen">
+            <label class="m--1">Masculino</label>	
+			<input type="radio" name="gen">
+			<br>
+			<br>
+			<br>
+			<label>Profesion</label>
+			<select name="lstpro<label>Masculino</label>"> <!-- permite crear listas de´plazables-->
+                <option value="1"> Ingeniero </option>
+                <option value="2"> Administrador </option>
+                <option value="3"> Medico </option>
+                <!-- envia el valor de la opcion que se selecciono -->
+            </select>
+            <br>
+            <br>
+            <br>
+            <label>Seleccione el navegador de mas uso</label>
+            <input type="text" name="txtnav" list="lista1" required>
+            <datalist id="lista1">
+                <option value="chrome" label="1">
+                <option value="Internet Explorer" label="2">
+                <option value="Mozilla" label="3">
+            </datalist>
+			<label>Estudios Realizados</label>
+			<br>
+            <label class="m--2">Primarios</label> <input type="checkbox" name="chkpri" value="p">
+            <label class="m--1">Secundarios</label><input type="checkbox" name="chksec" value="s">
+            <label class="m--1">Superiores</label><input type="checkbox" name="chkpos" value="u">
+            <br>
+            <br>
+            <br>
+            <span class="tooltip bg--green" data-text="ejemplo: ABC123 "><input type="text" required placeholder="Placa de vehiculo "></span>
+            <input type="submit" class="btn--raised btn--green" value="Registrar">
+            <input type="reset" class="btn--raised btn--accent" value="limpiar">
+            <input type="button" class="btn--raised btn--blue" value="ir a...">
+
+                        
+        </form>
+
+	</main>
+
+
+
+</body>
+</html>

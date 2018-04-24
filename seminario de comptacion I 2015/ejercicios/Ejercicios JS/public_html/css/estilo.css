@@ -1,0 +1,49 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 1/03/2016, 05:01:43 PM
+    Author     : UIT
+*/
+
+body{
+    background-color: #666666
+}
+nav{
+    text-align: center;
+}
+h1{
+    background-color: #000000;
+   color:red;
+   text-align:  center;
+   }
+   a{
+    display: inline-block;
+    height: 30px;
+    width: 120px;
+    text-align: center;
+    border: 2px black outset;
+    /*  grosro  color   estilo */
+    background-color: #9e4f4f ;
+    color: white;
+    text-decoration: none;
+    line-height: 30px;
+    cursor: pointer;
+    box-shadow: 3px 2px 3px  #eea4a4;
+    text-shadown: 1px 1px 1px black;
+    /* border-radius: 10px; */
+    border-radius: 10px 10px 0px 0px;
+    margin: 20px;
+    padding: 5px;
+}
+   
+a:hover{
+    background-color: red;
+    color:yellow;
+}
+a:active{
+    background-color: #a9a4ee;
+    color:black;
+}
