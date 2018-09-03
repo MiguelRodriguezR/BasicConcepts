@@ -6,222 +6,310 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="250dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/back"
-        android:editable="false"
-        android:focusableInTouchMode="true"
-        android:gravity="right"
-        android:padding="5dp"
-        android:text="22/3"
-        android:textColor="#999999 "
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button17"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="8"
-        app:layout_constraintEnd_toStartOf="@+id/button6"
+        android:onClick="setExpresion"
+        android:padding="0dp"
+        android:text="0"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/buttonPoint2"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button7"
-        app:layout_constraintTop_toTopOf="@+id/button7" />
+        app:layout_constraintStart_toStartOf="@+id/textViewScreen2"
+        app:layout_constraintTop_toBottomOf="@+id/button14" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/buttonPoint2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="9"
-        app:layout_constraintEnd_toStartOf="@+id/button5"
+        android:onClick="setExpresion"
+        android:padding="0dp"
+        android:text="."
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/button17"
+        app:layout_constraintEnd_toStartOf="@+id/buttonOpenPatentesis2"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button2"
-        app:layout_constraintTop_toTopOf="@+id/button2" />
+        app:layout_constraintStart_toEndOf="@+id/button17"
+        app:layout_constraintTop_toTopOf="@+id/button17" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/buttonOpenPatentesis2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="7"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
+        android:onClick="setExpresion"
+        android:padding="0dp"
+        android:text="("
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonPoint2"
+        app:layout_constraintEnd_toStartOf="@+id/buttonEquals2"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintStart_toEndOf="@+id/buttonPoint2"
+        app:layout_constraintTop_toTopOf="@+id/buttonPoint2" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/buttonEquals2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="5"
-        app:layout_constraintEnd_toStartOf="@+id/button11"
+        android:padding="0dp"
+        android:text="="
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonOpenPatentesis2"
+        app:layout_constraintEnd_toEndOf="@+id/textViewScreen2"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button15"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
-
-    <Button
-        android:id="@+id/button11"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="6"
-        app:layout_constraintEnd_toStartOf="@+id/button12"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button9"
-        app:layout_constraintTop_toBottomOf="@+id/button6" />
-
-    <Button
-        android:id="@+id/button12"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:text="/"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button11"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
-
-    <Button
-        android:id="@+id/button13"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="1"
-        app:layout_constraintEnd_toStartOf="@+id/button14"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/button15" />
+        app:layout_constraintStart_toEndOf="@+id/buttonOpenPatentesis2"
+        app:layout_constraintTop_toTopOf="@+id/buttonOpenPatentesis2" />
 
     <Button
         android:id="@+id/button14"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="2"
-        app:layout_constraintEnd_toStartOf="@+id/button10"
+        android:onClick="setExpresion"
+        android:padding="0dp"
+        android:text="1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonYexpX"
+        app:layout_constraintEnd_toStartOf="@+id/button15"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button13"
-        app:layout_constraintTop_toBottomOf="@+id/button9" />
+        app:layout_constraintStart_toStartOf="@+id/textViewScreen2"
+        app:layout_constraintTop_toBottomOf="@+id/button12" />
 
     <Button
         android:id="@+id/button15"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="4"
-        app:layout_constraintEnd_toStartOf="@+id/button9"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/button7" />
-
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="3"
+        android:onClick="setExpresion"
+        android:padding="0dp"
+        android:text="2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/button14"
         app:layout_constraintEnd_toStartOf="@+id/button16"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button14"
-        app:layout_constraintTop_toBottomOf="@+id/button11" />
+        app:layout_constraintTop_toTopOf="@+id/button14" />
 
     <Button
         android:id="@+id/button16"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:text="-"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
+        android:onClick="setExpresion"
+        android:padding="0dp"
+        android:text="3"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/button15"
+        app:layout_constraintEnd_toStartOf="@+id/buttonCloseParentesis2"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button10"
-        app:layout_constraintTop_toBottomOf="@+id/button12" />
+        app:layout_constraintStart_toEndOf="@+id/button15"
+        app:layout_constraintTop_toTopOf="@+id/button15" />
+
+    <Button
+        android:id="@+id/buttonCloseParentesis2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="setExpresion"
+        android:padding="0dp"
+        android:text=")"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/button16"
+        app:layout_constraintEnd_toEndOf="@+id/textViewScreen2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button16"
+        app:layout_constraintTop_toTopOf="@+id/button16" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="setExpresion"
+        android:padding="0dp"
+        android:text="4"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/button1DivX"
+        app:layout_constraintEnd_toStartOf="@+id/buttonMinus4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/textViewScreen2"
+        app:layout_constraintTop_toBottomOf="@+id/button5" />
+
+    <Button
+        android:id="@+id/buttonMinus4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="setExpresion"
+        android:padding="0dp"
+        android:text="5"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/button12"
+        app:layout_constraintEnd_toStartOf="@+id/button13"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button12"
+        app:layout_constraintTop_toTopOf="@+id/button12" />
+
+    <Button
+        android:id="@+id/button13"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="setExpresion"
+        android:padding="0dp"
+        android:text="6"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonMinus4"
+        app:layout_constraintEnd_toStartOf="@+id/buttonPlus2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonMinus4"
+        app:layout_constraintTop_toTopOf="@+id/buttonMinus4" />
+
+    <Button
+        android:id="@+id/buttonPlus2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="setExpresion"
+        android:padding="0dp"
+        android:text="+"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/button13"
+        app:layout_constraintEnd_toEndOf="@+id/textViewScreen2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button13"
+        app:layout_constraintTop_toTopOf="@+id/button13" />
 
     <Button
         android:id="@+id/button5"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="*"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
+        android:onClick="setExpresion"
+        android:padding="0dp"
+        android:text="7"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonTan"
+        app:layout_constraintEnd_toStartOf="@+id/buttonMinus3"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button6"
-        app:layout_constraintTop_toTopOf="@+id/button6" />
-
-    <android.support.constraint.Group
-        android:id="@+id/group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:constraint_referenced_ids="button2,button6,button7,button5" />
+        app:layout_constraintStart_toStartOf="@+id/textViewScreen2"
+        app:layout_constraintTop_toBottomOf="@+id/buttonC5" />
 
     <Button
-        android:id="@+id/button19"
+        android:id="@+id/buttonMinus3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:text="+"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
+        android:onClick="setExpresion"
+        android:text="8"
+        app:layout_constraintBottom_toBottomOf="@+id/button5"
+        app:layout_constraintEnd_toEndOf="@+id/textViewScreen"
+        app:layout_constraintEnd_toStartOf="@+id/button10"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button22"
-        app:layout_constraintTop_toBottomOf="@+id/button16" />
+        app:layout_constraintStart_toEndOf="@+id/button5"
+        app:layout_constraintTop_toTopOf="@+id/button5" />
 
     <Button
-        android:id="@+id/button22"
+        android:id="@+id/button10"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="="
-        app:layout_constraintEnd_toStartOf="@+id/button19"
+        android:onClick="setExpresion"
+        android:padding="0dp"
+        android:text="9"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonMinus3"
+        app:layout_constraintEnd_toStartOf="@+id/button11"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button20"
-        app:layout_constraintTop_toBottomOf="@+id/button10" />
+        app:layout_constraintStart_toEndOf="@+id/buttonMinus3"
+        app:layout_constraintTop_toTopOf="@+id/buttonMinus3" />
 
     <Button
-        android:id="@+id/button21"
+        android:id="@+id/button11"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="c"
-        app:layout_constraintEnd_toStartOf="@+id/button20"
+        android:onClick="setExpresion"
+        android:padding="0dp"
+        android:text="-"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/button10"
+        app:layout_constraintEnd_toEndOf="@+id/textViewScreen2"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/button13" />
+        app:layout_constraintStart_toEndOf="@+id/button10"
+        app:layout_constraintTop_toTopOf="@+id/button10" />
 
     <Button
-        android:id="@+id/button20"
+        android:id="@+id/buttonC5"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="0"
-        app:layout_constraintEnd_toStartOf="@+id/button22"
+        android:padding="0dp"
+        android:text="C"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonPercent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonDiv4"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button21"
-        app:layout_constraintTop_toBottomOf="@+id/button14" />
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="@+id/textViewScreen2"
+        app:layout_constraintTop_toBottomOf="@+id/textViewScreen2"
+        app:layout_constraintVertical_bias="1.0" />
 
+    <Button
+        android:id="@+id/buttonDiv4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="setExpresion"
+        android:layout_margin="0dp"
+        android:padding="0dp"
+        android:text="÷"
+        android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonC5"
+        app:layout_constraintEnd_toStartOf="@+id/buttonMul3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonC5"
+        app:layout_constraintTop_toTopOf="@+id/buttonC5" />
+
+    <Button
+        android:id="@+id/buttonMul3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="setExpresion"
+        android:padding="0dp"
+        android:text="X"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonDiv4"
+        app:layout_constraintEnd_toStartOf="@+id/buttonBack3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonDiv4"
+        app:layout_constraintTop_toTopOf="@+id/buttonDiv4" />
+
+    <Button
+        android:id="@+id/buttonBack3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="0dp"
+        android:text="del"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonMul3"
+        app:layout_constraintEnd_toEndOf="@+id/textViewScreen2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonMul3"
+        app:layout_constraintTop_toTopOf="@+id/buttonMul3" />
+
+    <TextView
+        android:id="@+id/textViewScreen2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="240dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
