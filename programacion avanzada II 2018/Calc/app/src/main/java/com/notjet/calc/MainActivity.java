@@ -1,6 +1,7 @@
 package com.notjet.calc;
 
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -55,11 +56,60 @@ public class MainActivity extends AppCompatActivity {
                retText = "sin(";
                break;
 
+           case "cos":
+               retText = "cos(";
+               break;
+
+           case "tan":
+               retText = "tan(";
+               break;
+
+           case "√":
+               retText = "√(";
+               break;
+
+           case "ln":
+               retText = "ln(";
+               break;
+
+           case "log":
+               retText = "log(";
+               break;
+
+           case "1/x":
+               retText = "x1÷";
+               break;
+
+           case "e^x":
+               retText = "e^(";
+               break;
+
+           case "x^2":
+               retText = "^2";
+               break;
+
+           case "y^x":
+               retText = "^";
+               break;
+
+
        }
+
+
 
        expresion += retText;
        screen.setText(expresion);
        //Log.d("e",""+getResources().getConfiguration().orientation);
+    }
+
+    public void deleteAll(View view){
+        screen.setText("");
+    }
+
+    public void setAbout(View view){
+        Intent intent = new Intent(this, About.class);
+        startActivity(intent);
+
     }
 
 
