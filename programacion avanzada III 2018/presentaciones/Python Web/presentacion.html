@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Python en la Web</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Python en la Web</h1>
+					<h2><img src="img/pyico.png" alt="" width="20%"></h2>
+					<p>Leectura y creacion de paginas web</p>
+					<p>
+						<small>por <a href="https://github.com/MiguelRodriguezR">Miguel Rodriguez</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h1>Scrapeando la web con Python</h1>
+
+				</section>
+
+
+				<section data-background="img/coding.gif">
+					<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+						<p>La palabra scrapear hace referencia a realizar una búsqueda determinada en el buscador y recolectar los datos que este envia como respuesta.</p>
+
+					</div>
+
+				</section>
+
+				<section data-background="img/coding.gif">
+					<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+						<p>para lograr esto se deben instalar ciertas dependencias </p>
+						<pre><code class="hljs" data-trim contenteditable>
+							$> pip install requests
+							$> pip install lxml
+						</code></pre>
+						<p>	requests: una librería estupenda para trabajar http <br>
+								lxml: es una librería para manejar XML, básica</p>
+					</div>
+
+				</section>
+
+				<section>
+					<p>Manos a la obra, descarguemos una web</p>
+					<pre><code class="hljs" data-trim contenteditable>
+import requests
+import sys
+
+def download(url):
+    """Returns the HTML source code from the given URL
+        :param url: URL to get the source from.
+    """
+    r = requests.get(url)
+    if r.status_code != 200:
+        sys.stderr.write("! Error {} retrieving url {}".format(r.status_code, url))
+        return None
+    return r.text
+
+if __name__ == '__main__':
+    url = "http://www.udenar.edu.co"
+    r = download(url)
+    if r:
+        sys.stdout.write(r[:200])
+    else:
+        sys.stdout.write("Nothing was retrieved.")
+					</code></pre>
+				</section>
+
+				<section>
+					<p> para analizar el arbol de urls del que depende una pagina utilizaremos cadenas Xpath</p>
+				</section>
+
+				<section>
+					<ul>
+						<li><strong style="color:#00bb00">//a/@href: </strong> devuelve el atributo href de los nodos cuya etiqueta sea a y que se encuentren en cualquier punto del árbol jerárquico (//).</li>
+						<li><strong style="color:#00bb00">//title/text():</strong> devuelve el texto (el contenido que hay entre las etiquetas) de los nodos cuya etiqueta sea title y que se encuentren en cualquier punto del árbol.</li>
+						<li><strong style="color:#00bb00">//div[@id='content']//p/text():</strong> devuelve el texto de todos los nodos tipo p que estén por debajo del nodo div cuyo atributo id es content, en cualquier lugar en que se encuentre este nodo.</li>
+					</ul>
+				</section>
+
+				<section>
+					<p>haciendo la busqueda de la etiquetas a</p>
+					<pre><code>
+import requests
+import sys
+from lxml import html
+
+
+def download(url):
+    """Returns the HTML source code from the given URL
+        :param url: URL to get the source from.
+    """
+    r = requests.get(url)
+    if r.status_code != 200:
+        sys.stderr.write("! Error {} retrieving url {}\n".format(r.status_code, url))
+        return None
+
+    return r
+
+
+if __name__ == '__main__':
+    sys.stdout.write("=============================\n")
+    sys.stdout.write("== Lingwars - Scrape XPath ==\n")
+    sys.stdout.write("=============================\n")
+
+    url = "http://www.udenar.edu.co"
+
+    page = download(url)
+    if page:
+        sys.stdout.write("\n\n1) Download text from {}\n".format(url))
+        sys.stdout.write(page.text[:200])
+
+        # Parse the text to XML structures
+        sys.stdout.write("\n\n2) Let's try some XPath expresions:")
+        tree = html.fromstring(page.content)
+
+        # Execute xpath over retrieved html content
+        xpath_string = '//a/@href'
+        results = tree.xpath(xpath_string)
+        sys.stdout.write('\n\t'.join(results))
+
+    else:
+        sys.stdout.write("Nothing was retrieved.")
+					</code></pre>
+				</section>
+
+
+				<section>
+					<p>suponiendo que queremos acceder a las rutas de las imagenes del banner</p>
+					<pre><code>
+import requests
+import sys
+from lxml import html
+
+
+def download(url):
+    """Returns the HTML source code from the given URL
+        :param url: URL to get the source from.
+    """
+    r = requests.get(url)
+    if r.status_code != 200:
+        sys.stderr.write("! Error {} retrieving url {}\n".format(r.status_code, url))
+        return None
+
+    return r
+
+
+if __name__ == '__main__':
+    sys.stdout.write("=============================\n")
+    sys.stdout.write("== Lingwars - Scrape XPath ==\n")
+    sys.stdout.write("=============================\n")
+
+    url = "http://www.udenar.edu.co"
+
+    page = download(url)
+    if page:
+        sys.stdout.write("\n\n1) Download text from {}\n".format(url))
+        sys.stdout.write(page.text[:200])
+
+        # Parse the text to XML structures
+        sys.stdout.write("\n\n2) Let's try some XPath expresions:\n")
+        tree = html.fromstring(page.content)
+
+        # Execute xpath over retrieved html content
+        #xpath_string = '//a/@href'
+        #xpath_string = '//div[@class="benefit-line-decoration"]//text()'
+        xpath_string = '//li/@data-thumb'
+        results = tree.xpath(xpath_string)
+        sys.stdout.write('\n\t'.join(results))
+
+    else:
+        sys.stdout.write("Nothing was retrieved.")
+
+					</code></pre>
+				</section>
+
+
+				<section>
+					<h1>creacion de servicios web</h1>
+				</section>
+
+				<section>
+					<p>Existen bastantes frameworks web de Python, pero estos son algunos de los mejores:</p>
+					<ul>
+						<li>Django</li>
+						<li>Grok</li>
+						<li>WebPy</li>
+					</ul>
+				</section>
+
+				<section data-background="img/redit.gif">
+					<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+						<p>web.py es un framework web para Python que es tan simple como poderoso</p>
+						<pre><code>
+pip install web.py==0.40-dev1
+						</code></pre>	
+					</div>
+				</section>
+
+				<section >
+					<p>Una aplicación web.py completa</p>
+					<pre><code>import web
+
+urls = (
+    '/(.*)', 'hello'
+)
+app = web.application(urls, globals())
+
+class hello:
+    def GET(self, name):
+        if not name:
+            name = 'World'
+        return 'Hello, ' + name + '!'
+
+if __name__ == "__main__":
+    app.run()
+				</code></pre>
+				</section>
+
+
+				<section data-background="img/oso.gif">
+					<div style="background-color: rgba(0, 0, 0, 0.5); color: #fff; padding: 20px;">
+						<h2>... y eso es todo!</h2>
+						<a href="https://github.com/MiguelRodriguezR">https://github.com/MiguelRodriguezR</a>
+					</div>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
