@@ -507,6 +507,7 @@
         android:id="@+id/buttonEquals"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:onClick="saveResult"
         android:padding="0dp"
         android:text="="
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"

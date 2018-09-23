@@ -54,6 +54,7 @@
         android:id="@+id/buttonEquals2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:onClick="saveResult"
         android:padding="0dp"
         android:text="="
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -316,15 +317,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:onClick="setAbout"
-        android:text="acerca de"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
