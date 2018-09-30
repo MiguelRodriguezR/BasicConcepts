@@ -6,4 +6,8 @@
         android:title="@string/about"/>
     <item android:id="@+id/history"
         android:title="@string/history" />
+    <item android:id="@+id/graph"
+        android:title="@string/graph" />
+    <item android:id="@+id/graph2"
+        android:title="@string/graph" />
 </menu>

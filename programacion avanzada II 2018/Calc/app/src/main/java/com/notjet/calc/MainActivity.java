@@ -65,6 +65,12 @@ public class MainActivity extends AppCompatActivity {
             case R.id.history:
                 setHistory();
                 return true;
+            case R.id.graph:
+                setGraph();
+                return true;
+            case R.id.graph2:
+                setGraph2();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -144,6 +150,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void setHistory(){
         Intent intent = new Intent(this, HistoryActivity.class);
+        startActivity(intent);
+
+    }
+
+    public void setGraph(){
+        Intent intent = new Intent(this, GraphActivity.class);
+        startActivity(intent);
+
+    }
+
+    public void setGraph2(){
+        Intent intent = new Intent(this, Graph2Activity.class);
         startActivity(intent);
 
     }
